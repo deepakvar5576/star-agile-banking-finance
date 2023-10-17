@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: bankapp-eta-deploy
   labels:
-    app: bankapp-eta-app1
+    app: bankapp-eta-app
 spec:
   replicas: 3
   selector:
@@ -23,9 +23,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bankapp-eta-np-service1
+  name: bankapp-eta-np-service
   labels:
-    app: bankapp-eta-app1
+    app: bankapp-eta-app
 spec:
   selector:
     app: bankapp-eta-app
