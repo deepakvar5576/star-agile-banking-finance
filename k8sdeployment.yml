@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: banking-all
+  name: bankapp-eta-app-all
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: banking-all
+      app: bankapp-eta-appg-all
   template:
     metadata:
       labels:
-        app: banking-all
+        app: bankapp-eta-app-all
     spec:
       containers:
-        - name: bankingnet
-          image: deepakvarshney5576/banking-project:1.0
+        - name: bankapp-eta-app
+          image: deepakvarshney5576/bankapp-eta-app:1.0
           ports:
             - containerPort: 8081
           env:
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: banking-all
+  name: bankapp-eta-app-all
 spec:
   type: NodePort
   ports:
     - port: 8081
       targetPort: 8081
   selector:
-    app: banking-all
+    app: bankapp-eta-app-all
